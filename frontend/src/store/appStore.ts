@@ -67,6 +67,9 @@ interface AppState {
   createOneOffTask: (task: any) => Promise<void>;
   completeOneOffTask: (taskId: string) => Promise<void>;
   deleteOneOffTask: (taskId: string) => Promise<void>;
+  addRoutineTask: (task: any) => Promise<void>;
+  deleteRoutineTask: (taskId: string) => Promise<void>;
+  updateRoutineTask: (taskId: string, task: any) => Promise<void>;
   setCelebration: (show: boolean) => void;
   setActiveTab: (tab: string) => void;
   initializeApp: () => Promise<void>;
@@ -178,6 +181,33 @@ export const useAppStore = create<AppState>((set, get) => ({
       await get().fetchOneOffTasks();
     } catch (error: any) {
       console.error('Error deleting task:', error);
+    }
+  },
+
+  addRoutineTask: async (task) => {
+    try {
+      await api.createRoutineTask(task);
+      await get().fetchRoutineTasks();
+    } catch (error: any) {
+      console.error('Error adding routine task:', error);
+    }
+  },
+  
+  deleteRoutineTask: async (taskId: string) => {
+    try {
+      await api.deleteRoutineTask(taskId);
+      await get().fetchRoutineTasks();
+    } catch (error: any) {
+      console.error('Error deleting routine task:', error);
+    }
+  },
+  
+  updateRoutineTask: async (taskId: string, task: any) => {
+    try {
+      await api.updateRoutineTask(taskId, task);
+      await get().fetchRoutineTasks();
+    } catch (error: any) {
+      console.error('Error updating routine task:', error);
     }
   },
   
