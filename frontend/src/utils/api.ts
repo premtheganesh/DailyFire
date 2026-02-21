@@ -30,6 +30,34 @@ export const api = {
     if (!res.ok) throw new Error('Failed to fetch routine tasks');
     return res.json();
   },
+
+  createRoutineTask: async (task: any) => {
+    const res = await fetch(`${API_BASE}/routine-tasks`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(task),
+    });
+    if (!res.ok) throw new Error('Failed to create routine task');
+    return res.json();
+  },
+  
+  updateRoutineTask: async (taskId: string, task: any) => {
+    const res = await fetch(`${API_BASE}/routine-tasks/${taskId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(task),
+    });
+    if (!res.ok) throw new Error('Failed to update routine task');
+    return res.json();
+  },
+  
+  deleteRoutineTask: async (taskId: string) => {
+    const res = await fetch(`${API_BASE}/routine-tasks/${taskId}`, {
+      method: 'DELETE',
+    });
+    if (!res.ok) throw new Error('Failed to delete routine task');
+    return res.json();
+  },
   
   // Daily Progress
   getDailyProgress: async (date: string) => {
