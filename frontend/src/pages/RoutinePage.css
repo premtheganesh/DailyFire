@@ -184,3 +184,33 @@
 }
 
 .fab-button:hover { transform: translateY(-2px); opacity: 0.9; }
+
+/* Read-only banner for past/future dates */
+.readonly-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.readonly-banner--past {
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--primary-light);
+}
+
+.readonly-banner--future {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  color: var(--accent);
+}
+
+.progress-loading {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 12px 0;
+}
