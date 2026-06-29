@@ -2,7 +2,7 @@
 .env
 .env.local
 .env.*.local
-backend/.env
+api-server/.env
 
 # Python
 __pycache__/
@@ -10,33 +10,32 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
-backend/venv/
-backend/.venv/
+venv/
+.venv/
+api-server/venv/
+api-server/.venv/
 *.egg-info/
-dist/
 build/
 
-# Database — never commit local DB
-backend/dailyfire.db
+# Database
 *.db
 *.sqlite
 *.sqlite3
 
 # Node
 node_modules/
-frontend/node_modules/
 
 # Build output
-frontend/dist/
-frontend/.vite/
+dist/
+.vite/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# AI agent artifacts
-test_result.md
-
 # Logs
 *.log
 npm-debug.log*
+
+# AI agent artifacts
+test_result.md
