@@ -14,7 +14,7 @@ interface Note {
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 14 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.3, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+  transition: { duration: 0.3, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
 export const QuickNotesPage: React.FC = () => {
