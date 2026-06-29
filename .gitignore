@@ -34,6 +34,9 @@ frontend/.vite/
 .DS_Store
 Thumbs.db
 
+# AI agent artifacts
+test_result.md
+
 # Logs
 *.log
 npm-debug.log*
